@@ -1,4 +1,4 @@
-# Module Omnipro_DeferredExample
+# Description
 
 This module provide examples for some characteristics Magento Framework
 
