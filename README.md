@@ -1,6 +1,6 @@
 # Description
 
-This module provide examples for some characteristics Magento Framework
+This repository provide examples for some characteristics Magento Framework
 
 ## Authors
 
