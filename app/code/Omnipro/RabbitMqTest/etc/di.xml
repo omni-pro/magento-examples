@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Preferences -->
+    <preference for="Omnipro\RabbitMqTest\Api\Data\LogInfoInterface" type="Omnipro\RabbitMqTest\Model\Data\LogInfo" />
+    <preference for="Omnipro\RabbitMqTest\Api\Data\ResponseInterface" type="Omnipro\RabbitMqTest\Model\Data\Response" />
+    <preference for="Omnipro\RabbitMqTest\Api\Management\LogProcessorInterface" type="Omnipro\RabbitMqTest\Model\Management\LogProcessor" />
+    <preference for="Omnipro\RabbitMqTest\Api\Async\LogProcessorConsumerInterface" type="Omnipro\RabbitMqTest\Model\Async\LogProcessorConsumer" />
+    <preference for="Omnipro\RabbitMqTest\Api\Async\LogBulkProcessorConsumerInterface" type="Omnipro\RabbitMqTest\Model\Async\LogBulkProcessorConsumer" />
+
+    <!-- Async -->
+    <type name="Magento\Framework\MessageQueue\MergerFactory">
+        <arguments>
+            <argument name="mergers" xsi:type="array">
+                <item name="omnipro.integration.loggerprocessor.bulk.batch" xsi:type="string">Omnipro\RabbitMqTest\Model\Async\Merger</item>                
+            </argument>
+        </arguments>
+    </type>
+
+    <!-- Loggers -->
+    <virtualType name="LogProcessorLoggerHandler" type="Magento\Framework\Logger\Handler\Base">
+        <arguments>
+            <argument name="fileName" xsi:type="string">/var/log/omnipro/log-processor.log</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="LogProcessorLogger" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="debug" xsi:type="object">LogProcessorLoggerHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Omnipro\RabbitMqTest\Model\Management\LogProcessor">
+        <arguments>
+            <argument name="logger" xsi:type="object">LogProcessorLogger</argument>
+        </arguments>
+    </type>
+</config>
