@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Communication/etc/communication.xsd">    
+    <topic name="omnipro.integration.loggerprocessor.*" request="Omnipro\RabbitMqTest\Api\Data\LogInfoInterface"/>
+    <topic name="omnipro.integration.loggerprocessor.unbulk" request="Omnipro\RabbitMqTest\Api\Data\LogInfoInterface"/>                  
+    <topic name="omnipro.integration.loggerprocessor.bulk.batch" request="Magento\AsynchronousOperations\Api\Data\OperationInterface"/>
+    <topic name="omnipro.integration.loggerprocessor.bulk.unbatch" request="Magento\AsynchronousOperations\Api\Data\OperationInterface"/>    
+</config>

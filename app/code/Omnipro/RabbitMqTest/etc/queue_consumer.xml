@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/consumer.xsd">
+    <consumer name="omnipro.integration.loggerprocessor.unbulk_all" queue="omnipro_integration_loggerprocessor.unbulk_all" handler="Omnipro\RabbitMqTest\Model\Async\LogPlainProcessorConsumer::consume"/>
+    <consumer name="omnipro.integration.loggerprocessor.unbulk" queue="omnipro_integration_loggerprocessor.unbulk" handler="Omnipro\RabbitMqTest\Model\Async\LogProcessorConsumer::consume"/>
+    <consumer name="omnipro.integration.loggerprocessor.bulk.unbatch" queue="omnipro_integration_loggerprocessor.bulk.unbatch" handler="Omnipro\RabbitMqTest\Model\Async\LogBulkProcessorConsumer::consume" />
+    <consumer name="omnipro.integration.loggerprocessor.bulk.batch" queue="omnipro_integration_loggerprocessor.bulk.batch" consumerInstance="Magento\Framework\MessageQueue\BatchConsumer" handler="Omnipro\RabbitMqTest\Model\Async\LogBulkBatchProcessorConsumer::consume" />    
+</config>

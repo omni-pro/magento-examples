@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/topology.xsd">
+    <exchange name="omnipro" type="topic">
+        <binding id="omniproIntegrationLoggerProcessorUnBulkAll" topic="omnipro.integration.loggerprocessor.*" destinationType="queue" destination="omnipro_integration_loggerprocessor.unbulk_all"/>
+        <binding id="omniproIntegrationLoggerProcessorUnBulk" topic="omnipro.integration.loggerprocessor.unbulk" destinationType="queue" destination="omnipro_integration_loggerprocessor.unbulk"/>
+        <binding id="omniproIntegrationLoggerProcessorBulkBatch" topic="omnipro.integration.loggerprocessor.bulk.batch" destinationType="queue" destination="omnipro_integration_loggerprocessor.bulk.batch"/>
+        <binding id="omniproIntegrationLoggerProcessorBulkUnBatch" topic="omnipro.integration.loggerprocessor.bulk.unbatch" destinationType="queue" destination="omnipro_integration_loggerprocessor.bulk.unbatch"/>        
+    </exchange>    
+</config>

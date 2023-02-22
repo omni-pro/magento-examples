@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/publisher.xsd">    
+    <publisher topic="omnipro.integration.loggerprocessor.unbulk">
+        <connection exchange="omnipro"/>
+    </publisher>
+    <publisher topic="omnipro.integration.loggerprocessor.bulk.batch">
+        <connection exchange="omnipro"/>
+    </publisher>
+    <publisher topic="omnipro.integration.loggerprocessor.bulk.unbatch">
+        <connection exchange="omnipro"/>
+    </publisher>
+</config>
