@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Preferences -->
+    <preference for="Omnipro\DataPrivacyPolicies\Api\Data\DataPrivacyPoliciesInterface" type="Omnipro\DataPrivacyPolicies\Model\Data\DataPrivacyPolicies"/>
+    <preference for="Omnipro\DataPrivacyPolicies\Api\Management\IsDataPrivacyPoliciesAllowedInterface" type="Omnipro\DataPrivacyPolicies\Model\Management\IsDataPrivacyPoliciesAllowed"/>
+    <preference for="Omnipro\DataPrivacyPolicies\Api\Management\SetDataPrivacyPoliciesInterface" type="Omnipro\DataPrivacyPolicies\Model\Management\SetDataPrivacyPolicies"/>
+    <preference for="Omnipro\DataPrivacyPolicies\Api\ConfigInterface" type="Omnipro\DataPrivacyPolicies\Model\Config"/>
+    <!-- Plugins -->
+    <type name="Magento\Customer\Api\CustomerRepositoryInterface">
+        <plugin name="frontend_api_customer_repository" type="Omnipro\DataPrivacyPolicies\Plugin\Api\CustomerRepositoryPlugin"/>
+    </type>    
+</config>

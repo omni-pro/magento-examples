@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <omnipro_data_privacy_policies>
+            <general>
+                <enable>1</enable>
+                <mandatory>1</mandatory>
+                <checkbox_title>Accept data privacy policies</checkbox_title>
+                <link_title>Know more</link_title>
+                <cms_page>privacy-policy-cookie-restriction-mode</cms_page>
+            </general>
+        </omnipro_data_privacy_policies>
+    </default>
+</config>

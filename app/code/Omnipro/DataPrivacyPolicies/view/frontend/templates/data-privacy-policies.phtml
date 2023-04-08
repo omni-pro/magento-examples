@@ -1,0 +1,23 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \Omnipro\DataPrivacyPolicies\ViewModel\DataPrivacyPoliciesViewModel $viewModel */
+
+$viewModel = $block->getViewModel();
+?>
+<?php
+if ($viewModel->isDataPrivacyPoliciesEnabled()): ?>
+    <div class="field choice">
+        <input type="checkbox"
+            name="data_privacy_policies_allowed"
+            title="<?= $escaper->escapeHtmlAttr(__($viewModel->getDataPrivacyPoliciesCheckBoxTitle())) ?>"
+            id="data_privacy_policies_allowed"
+            class="checkbox"
+            <?php if ($viewModel->isDataPrivacyPoliciesAllowed()): ?>checked="checked"<?php endif; ?>
+            <?php if ($viewModel->isDataPrivacyPoliciesMandatory()): ?>required <?php endif; ?>>
+        <label for="data_privacy_policies_allowed" class="label">
+            <span><?= $escaper->escapeHtmlAttr(__($viewModel->getDataPrivacyPoliciesCheckBoxTitle())) ?></span>
+        </label>
+        <a href="<?= $escaper->escapeHtmlAttr($viewModel->getDataPrivacyPoliciesPageUrl()) ?>" 
+            target="_blank"><?= $escaper->escapeHtmlAttr($viewModel->getDataPrivacyPoliciesLinkTitle()) ?></a>
+    </div>
+<?php endif ?>

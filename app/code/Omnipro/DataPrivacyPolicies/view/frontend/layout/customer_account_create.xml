@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="form.additional.info">
+            <block name="customer.form.additional.info.data.privacy.policies" template="Omnipro_DataPrivacyPolicies::data-privacy-policies.phtml">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Omnipro\DataPrivacyPolicies\ViewModel\DataPrivacyPoliciesViewModel</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

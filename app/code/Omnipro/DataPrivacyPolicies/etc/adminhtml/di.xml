@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Plugins -->
+    <type name="Magento\Customer\Model\Customer\DataProviderWithDefaultAddresses">
+        <plugin name="data_privacy_policies_customer_data_provider_plugin" type="Omnipro\DataPrivacyPolicies\Plugin\Adminhtml\Model\DataProviderWithDefaultAddressesPlugin"/>
+    </type>
+</config>
