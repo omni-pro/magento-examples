@@ -41,7 +41,7 @@ class DataPrivacyPoliciesViewModelTest extends TestCase
     /**
      * @var MockObject
      */
-    private $isDataPrivacyPoliciesAllowdMock;
+    private $isDataPrivacyPoliciesAllowedMock;
 
     /**
      * @var DataPrivacyPoliciesViewModel
@@ -68,7 +68,7 @@ class DataPrivacyPoliciesViewModelTest extends TestCase
             ->onlyMethods(['isEnabled', 'isMandatory', 'getCheckboxTitle', 'getLinkTitle', 'getPageIdentifier'])
             ->getMockForAbstractClass();
 
-        $this->isDataPrivacyPoliciesAllowdMock = $this->getMockBuilder(IsDataPrivacyPoliciesAllowedInterface::class)
+        $this->isDataPrivacyPoliciesAllowedMock = $this->getMockBuilder(IsDataPrivacyPoliciesAllowedInterface::class)
             ->disableOriginalConstructor()
             ->onlyMethods(['execute'])
             ->getMockForAbstractClass();
@@ -77,7 +77,7 @@ class DataPrivacyPoliciesViewModelTest extends TestCase
             $this->customerSessionMock,
             $this->urlMock,
             $this->configMock,
-            $this->isDataPrivacyPoliciesAllowdMock
+            $this->isDataPrivacyPoliciesAllowedMock
         );
     }
 
@@ -184,7 +184,7 @@ class DataPrivacyPoliciesViewModelTest extends TestCase
             ->method('getId')
             ->willReturn($customerId);
 
-        $this->isDataPrivacyPoliciesAllowdMock->expects($this->any())
+        $this->isDataPrivacyPoliciesAllowedMock->expects($this->any())
             ->method('execute')
             ->willReturn($expectedResult);
 
@@ -220,7 +220,7 @@ class DataPrivacyPoliciesViewModelTest extends TestCase
     }
 
     /**
-     * Data Provider for IsDataPrivacyPolciiesAllowed Test
+     * Data Provider for IsDataPrivacyPoliciesAllowed Test
      *
      * @return array
      */
